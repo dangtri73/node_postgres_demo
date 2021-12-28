@@ -3,7 +3,7 @@ const Sequelize = require("sequelize");
 const db = require('../models')
 
     const create = async(req, res, next) => {
-        try {   
+        try {         
             let data = await users.create(req.body)
             res.status(200).send(data)
         } catch (error) {
@@ -28,10 +28,10 @@ const db = require('../models')
         try {
             const id = req.params.id
     
-            let data = await users.destroy(req.body, {
+            let data = await users.destroy({
                 where: {id: id}
             })
-            res.status(200).send(data, 'customer is deleted')
+            res.status(200).send(data)
         } catch (error) {
             res.status(400).send(error)
         }
@@ -41,10 +41,8 @@ const db = require('../models')
         try {
             const id = req.params.id
     
-            let data = await users.update(req.body, {
-                where: {id: id}
-            })
-            res.status(200).send(data, 'find with id')
+            let data = await users.findByPk(id)
+            res.status(200).send(data)
         } catch (error) {
             res.status(400).send(error)
         }

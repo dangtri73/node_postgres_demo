@@ -3,7 +3,7 @@ module.exports = (sequelize, Sequelize) => {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
-      allowNull: false
+      allowNull: true
     },
     position: {
       type: Sequelize.STRING,

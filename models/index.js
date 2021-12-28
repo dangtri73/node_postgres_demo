@@ -19,7 +19,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./users")(sequelize, Sequelize);
-db.tutorials = require("./users_company")(sequelize, Sequelize);
+db.users = require("./users")(sequelize, Sequelize);
+db.users_company = require("./users_company")(sequelize, Sequelize);
 
 module.exports = db;

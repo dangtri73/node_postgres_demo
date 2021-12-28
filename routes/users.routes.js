@@ -5,8 +5,8 @@ module.exports = app => {
     router.get('/:id', users.findOne)
     router.get('/', users.getList)
     router.post('/', users.create)
-    router.put('/', users.update)
-    router.delete('/', users.deleted)
+    router.put('/:id', users.update)
+    router.delete('/:id', users.deleted)
 
     app.use('/api/users', router);
 }
